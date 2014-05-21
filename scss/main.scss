@@ -1,0 +1,166 @@
+//Load google fonts- open sans
+@import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
+//Load normalize
+@import "normalize";
+
+//Colors
+$headercolor:#0d6e8c;
+$gray:#eee;
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+/*Page Elements*/
+body{ 
+	padding: 15px; 
+	background-color:$gray; 
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	color: #252525;
+}
+
+
+h2{ font-size: 24px; font-weight: 700; margin: 0 0 15px; text-transform: uppercase; color:$headercolor;}
+
+h3{ font-size: 18px; font-weight: 400; margin: 8px 0 5px; line-height: 1.25em;}
+
+h4{ font-size: 16px; font-weight: 300; font-style: italic; margin-bottom: 8px;}
+
+p{ 
+	line-height: 1.5em; 
+	margin:0 0 18px; 
+	font-size: 15px;
+		#resume{ 
+		font-weight: 300; 
+		line-height: 1.4em;
+				}
+}
+
+
+a{ color: #C3272F; 
+   text-decoration: none;
+    &:hover{ 
+    	text-decoration: underline;
+    	color:lighten($headercolor,5%);
+    }
+}
+   
+
+img{ max-width: 100%;}
+
+/***********************************************
+************  STRUCTURAL ELEMENTS  *************
+************************************************/
+body{
+	section{ 
+		background-color: #fff; 
+		max-width: 740px; 
+		padding: 20px 5px; 
+		margin: 0 auto 15px;
+	}
+}
+
+header{ overflow: hidden; margin-bottom: 20px; border-bottom:5px solid darken($headercolor,5%);}
+#logo{ display: block; margin: 0 auto 50px; max-height: 100px;}
+#logo-resume{ height: 103px; text-indent: -99999px; background: url('../img/resume-logo.png') 0 0 no-repeat; background-size: 100%; margin: 0 auto;}
+#logo-print{ display: none;}
+
+#contact-info{ 
+	text-align: center; margin: 0 auto;
+	 p{ font-size: 14px; margin-bottom: 8px;}
+     a{ color: #252525;}
+}
+    
+article{ margin-bottom: 20px;}
+
+dl{ margin-bottom: 15px;}
+dt{ font-size: 21px; color: lighten($headercolor,20%); margin: 15px 0 8px;}
+    dd{ margin-bottom: 6px; font-weight: 300; font-size: 14px;
+    	&:before{
+        content: "\00bb";
+        margin-right: 4px;
+    			}
+			}
+    
+
+#next-steps{ 
+	text-align: center; 
+	font-size: 12px; 
+	letter-spacing: 3px; 
+	text-transform: uppercase; 
+	color: #666; 
+	line-height: 2.5em !important; 
+	font-family: Georgia, "Times New Roman", Times, serif;
+		a{ color: #666;}
+	}
+    
+footer{ clear: both; padding: 10px 0; margin-top: 40px; text-align: center; font-weight: 300; font-size: 24px; border-bottom: 5px solid darken($headercolor,5%);}
+
+/***********************************************
+*************** GLOBAL CLASSES  ****************
+************************************************/
+.btn{ 
+	text-decoration: none; 
+	cursor: pointer;
+	&:hover{ 
+		text-decoration: underline;
+			}
+}
+    
+
+.fg:after{ content: ''; display: block; clear: both; visibility: hidden; height: 0;}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/***********************************************
+*************** MEDIA QUERIES  *****************
+************************************************/
+@media screen and (min-width: 480px){
+    #logo-resume{ width: 54.054054%;}
+}
+
+@media screen and (min-width: 600px){
+    body{ padding: 20px 40px;}  
+    body > section{ padding: 40px 50px;}
+    p#signature{ width: 40%; float: right;}
+    
+    dl{ width: 33.3333%; float: left; margin-bottom: 20px;}
+}
+
+@media screen and (min-width: 800px){
+    #logo-resume{ float: left; margin: 0;}
+    
+    #contact-info{ float: right; width: 30%; margin-top: 15px 0 0; text-align: left;}
+    
+    body > section section{ width: 100%; float: left; clear: left;}
+    //aside{ float: right; padding-top: 1.1em; width: 30%;}
+    
+    dl{ width: auto; float: none; margin-bottom: 0;}
+        dd{ font-size: 16px;}
+    
+    footer{ text-align: right;}
+}
+
+
+@media print{
+    body > section{ padding: 10px;}
+    p{ font-size: 14px;}    
+    #next-steps{ display: none !important;}
+    
+    #logo-resume{ display: none;}
+    #logo-print{ display: block; float: left; margin: 0;}
+    
+    #contact-info{ float: right; width: 30%; margin-top: 15px 0 0; text-align: left;}
+    
+    body > section section{ width: 100%; float: left; clear: left;}
+    aside{ float: right; width: 30%;}
+    
+    dl{ width: auto; float: none; margin-bottom: 0;}
+        dd{ font-size: 14px;}
+    
+    footer{ text-align: right;}
+}
